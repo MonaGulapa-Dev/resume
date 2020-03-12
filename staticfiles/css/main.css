@@ -21,6 +21,18 @@ body {
   margin-right: auto;
 }
 
+ul.social-links {
+  list-style-type: none;
+  padding: 0;
+}
+.social-links li {
+  display: inline-block;
+}
+.social {
+  width: 30px;
+  height: 30px;
+}
+
 #marky {
   color: green;
   background-color: hsla(89, 43%, 51%, 0.3);
