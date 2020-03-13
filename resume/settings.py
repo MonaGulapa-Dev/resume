@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+# The BASE_DIR variable, and what this is doing is it’s using the OS module to basically navigate through our project folders and assign the project directory, (the main guestbook folder), this is the base directory, so that we can reference the files inside it.  Once we have that we can use that later on throughout the script to basically define the parts of other files and folders relative to the base directory.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -50,8 +51,11 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+# ROOT_URLCONF this is referencing the ‘guestbook.urls’ file
+# And so in the settings.py, this is just telling django where to start looking for those urls.
 ROOT_URLCONF = "resume.urls"
 
+# TEMPLATES is the whole configurations how Django templates work and this is basically where Django looks for HTML templates, and how those templates can actually be processed in terms of special context variables that Django understands.
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -68,6 +72,7 @@ TEMPLATES = [
     }
 ]
 
+# WSGI_APPLICATION is again a reference to another file, and this is the guestbook.wsgi.application.  All that has in here is an application which is calling django’s built-in get_wsgi_application() and so Django will look for this application variable by default and basically here it is just referencing, telling Django this is where wsgi application is.
 WSGI_APPLICATION = "resume.wsgi.application"
 
 
@@ -112,7 +117,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+# is basically the url that Django uses to reference static files in your project.
+
 STATIC_URL = "/staticfiles/"
+
 MEDIA_URL = "/images/"
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "staticfiles")]
